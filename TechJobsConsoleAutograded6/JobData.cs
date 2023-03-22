@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Common;
 using System.Text;
 
 namespace TechJobsConsoleAutograded6
@@ -46,8 +47,25 @@ namespace TechJobsConsoleAutograded6
         {
             // load data, if not already loaded
             LoadData();
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+            foreach (Dictionary<string, string> row in AllJobs)
+            {
+                foreach(string key in row.Keys)
+                {
+                    string aValue = row[key];
+                    if (aValue.ToUpper().Contains(value.ToUpper()))
+                    {
+                        jobs.Add(row);
+                    }
+                }
 
-            return null;
+
+            }
+            
+            
+
+
+            return jobs;
         }
 
         /**
