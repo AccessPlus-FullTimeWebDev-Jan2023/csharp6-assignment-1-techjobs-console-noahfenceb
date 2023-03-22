@@ -66,7 +66,7 @@ namespace TechJobsConsoleAutograded6
                     // Fetch results
                     if (columnChoice.Equals("all"))
                     {
-                        Console.WriteLine(JobData.FindByValue(searchTerm));
+                        PrintJobs(JobData.FindByValue(searchTerm));
                     }
                     else
                     {
@@ -142,7 +142,7 @@ namespace TechJobsConsoleAutograded6
             //for (int i = 0; i< allJobs.Count(); i++)
             if (someJobs.Count == 0)
             {
-                Console.WriteLine("No Results");
+                Console.WriteLine("No results");
                 return;
             }
             {
